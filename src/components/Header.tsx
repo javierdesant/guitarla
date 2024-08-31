@@ -5,7 +5,6 @@ import type { CartActions } from "../reducers/cart-reducer"
 type HeaderProps = {
     cart: CartItem[]
     dispatch: React.Dispatch<CartActions>
-    increaseQuantity: (id: Guitar['id']) => void
     decreaseQuantity: (id: Guitar['id']) => void
     clearCart: () => void
 }
@@ -13,7 +12,6 @@ type HeaderProps = {
 function Header({
     cart,
     dispatch,
-    increaseQuantity, 
     decreaseQuantity, 
     clearCart
     } : HeaderProps) {
@@ -75,7 +73,7 @@ function Header({
                                                     <button
                                                         type="button"
                                                         className= "btn btn-dark"
-                                                        onClick={() => increaseQuantity(guitar.id)}
+                                                        onClick={() => dispatch({type: 'increase-quantity', payload: {id: guitar.id}})}
                                                         >
                                                         +
                                                     </button>
@@ -85,7 +83,8 @@ function Header({
                                                         className="btn btn-danger"
                                                         type="button"
                                                         onClick={() => dispatch({type: 'remove-from-cart', payload: {id: guitar.id}})}
-                                                        >X
+                                                        >
+                                                        X
                                                     </button>
                                                 </td>
                                             </tr>

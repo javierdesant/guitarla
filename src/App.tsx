@@ -7,21 +7,18 @@ import cartReducer, { initialState } from "./reducers/cart-reducer.ts"
 
 function App() {
 
-    const { cart, addToCart, removeFromCart, decreaseQuantity,
-        increaseQuantity, clearCart, isEmpty, cartTotal } = useCart()
+    const { removeFromCart, decreaseQuantity, increaseQuantity, clearCart } = useCart()
     const [state, dispatch] = useReducer(cartReducer, initialState)
     
     return (
         <>
 
         <Header 
-            cart={cart}
+            cart={state.cart}
             removeFromCart={removeFromCart}
             increaseQuantity={increaseQuantity}
             decreaseQuantity={decreaseQuantity}
             clearCart={clearCart}
-            isEmpty={isEmpty}
-            cartTotal={cartTotal}
         />
 
 
@@ -33,7 +30,7 @@ function App() {
                     <Guitar 
                         key={guitar.id}
                         guitar={guitar}
-                        addToCart={addToCart}
+                        dispatch={dispatch}
                     />
                 ))}
             </div>

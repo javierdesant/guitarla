@@ -18,11 +18,29 @@ export const initialState: CartState = {
     cart: []
 }
 
+const MAX_ITEMS = 5
+
 export default (state = initialState, { type, payload }: CartActions) => {
   switch (type) {
 
   case 'add-to-cart':
-    return { ...state, ...payload }
+    const itemExists = state.cart.find(guitar => guitar.id === payload.item.id)
+    let updatedCart: CartItem[] = []
+    if (itemExists) {
+        updatedCart = state.cart.map(item => {
+            if (item.id === payload.item.id && item.quantity < MAX_ITEMS) {
+                return {...item, quantity: item.quantity + 1}
+            } else {
+                return item
+            }
+        })
+    } else {
+        const newItem: CartItem = {...payload.item, quantity : 1}
+        updatedCart = [...state.cart, newItem]
+    }
+    return { ...state, cart: updatedCart }
+
+
 
   case 'remove-from-cart':
     return { ...state, ...payload }

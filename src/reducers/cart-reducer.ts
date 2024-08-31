@@ -6,7 +6,7 @@ export type CartActions =
     { type: 'remove-from-cart', payload: {id: Guitar['id']} } |
     { type: 'decrease-quantity', payload: {id: Guitar['id']} } |
     { type: 'increase-quantity', payload: {id: Guitar['id']} } |
-    { type: 'clear-cart' }
+    { type: 'clear-cart', payload: {} }
 
 export type CartState = {
     data: Guitar[]
@@ -16,4 +16,27 @@ export type CartState = {
 export const initialState: CartState = {
     data: db,
     cart: []
+}
+
+export default (state = initialState, { type, payload }: CartActions) => {
+  switch (type) {
+
+  case 'add-to-cart':
+    return { ...state, ...payload }
+
+  case 'remove-from-cart':
+    return { ...state, ...payload }
+
+  case 'decrease-quantity':
+    return { ...state, ...payload }
+
+  case 'increase-quantity':
+    return { ...state, ...payload }
+  
+  case 'clear-cart':
+    return { ...state, ...payload }
+
+  default:
+    return state
+  }
 }

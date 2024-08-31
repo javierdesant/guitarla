@@ -70,7 +70,8 @@ export default (state = initialState, { type, payload }: CartActions) => {
     return { ...state, cart }
   
   case 'clear-cart':
-    return { ...state, ...payload }
+    cart = []
+    return { ...state, cart }
 
   default:
     return state

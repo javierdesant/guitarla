@@ -8,19 +8,14 @@ const useCart = () => {
         return localStorageCart ? JSON.parse(localStorageCart) : []
     }
 
-    const [cart, setCart] = useState(initialCart)
+    const [cart] = useState(initialCart)
 
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
 
-    function clearCart() {
-        setCart([])
-    }    
-
     return {
-        cart,
-        clearCart
+        cart
     }
 }
 

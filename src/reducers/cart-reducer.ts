@@ -46,7 +46,16 @@ export default (state = initialState, { type, payload }: CartActions) => {
     return { ...state, cart }
 
   case 'decrease-quantity':
-    return { ...state, ...payload }
+    cart = state.cart.map( item => {
+        if (item.id === payload.id && item.quantity > 1) {
+            return {
+                ...item,
+                quantity: item.quantity - 1
+            }
+        }
+        return item
+    })
+    return { ...state, cart }
 
   case 'increase-quantity':
     cart = state.cart.map( item => {

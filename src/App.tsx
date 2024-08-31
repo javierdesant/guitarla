@@ -1,6 +1,6 @@
-import Header from "./components/Header"
-import Guitar from "./components/Guitar"
-import useCart from "./hooks/useCart"
+import Header from "./components/Header.tsx"
+import Guitar from "./components/Guitar.tsx"
+import useCart from "./hooks/useCart.ts"
 
 
 function App() {

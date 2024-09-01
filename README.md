@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# Udemy - GuitarLA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is taught by instructor [Juan Pablo De la torre Valdez](https://www.udemy.com/user/juanpablodelatorrevaldez/) through the [Udemy](https://www.udemy.com/) platform. Udemy offers a wide range of online courses across various disciplines, allowing individuals to learn new skills and advance their knowledge at their own pace.
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Screenshot
 
-- Configure the top-level `parserOptions` property like this:
+![](/public/img/screenshot-desktop.png)
+![](/public/img/screenshot-active-state.png)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Links
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Live Site URL: (https://guitarla-javierdesant.netlify.app/)
+
+### Built with
+
+- Flexbox
+- CSS Grid
+- Custom CSS properties 
+- [React](https://reactjs.org/) - JS library
+- [Vite](https://vitejs.dev/) - Build tool
+
+### What I learned
+
+In this project, I learned the following:
+
+- Building applications with Component-Based Architecture
+- Efficiently Managing Component Props and State
+- **Utilizing useReducer for Advanced State Management**
+- **Dispatching and Handling Actions in State Logic**
+- Leveraging React Hooks for Functional Components
+- **Initializing and Persisting State with Local Storage**
+- Using Styled Components for styling
+  - Applying styled-components for dynamic styling
+  - Customizing components with styled-components' theming
+  - Leveraging responsive design with styled-components
+
+
+## Author
+
+- LinkedIn - [Javier de Santiago Soto](www.linkedin.com/in/javierdesant)
+- Frontend Mentor - [@javierdesant](https://www.frontendmentor.io/profile/javierdesant)
